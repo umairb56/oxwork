@@ -1,0 +1,600 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "timelock_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "OxWorks_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "vetoer_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "admin_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "implementation_",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "votingPeriod_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "votingDelay_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "proposalThresholdBPS_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quorumVotesBPS_",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "oldAdmin",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "newAdmin",
+						"type": "address"
+					}
+				],
+				"name": "NewAdmin",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "oldImplementation",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "newImplementation",
+						"type": "address"
+					}
+				],
+				"name": "NewImplementation",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "oldPendingAdmin",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "newPendingAdmin",
+						"type": "address"
+					}
+				],
+				"name": "NewPendingAdmin",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "oldVetoer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "newVetoer",
+						"type": "address"
+					}
+				],
+				"name": "NewVetoer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "ProposalCanceled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "proposer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address[]",
+						"name": "targets",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "values",
+						"type": "uint256[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "signatures",
+						"type": "string[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes[]",
+						"name": "calldatas",
+						"type": "bytes[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "startBlock",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "endBlock",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "ProposalCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "proposer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address[]",
+						"name": "targets",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "values",
+						"type": "uint256[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "signatures",
+						"type": "string[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes[]",
+						"name": "calldatas",
+						"type": "bytes[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "startBlock",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "endBlock",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "proposalThreshold",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "quorumVotes",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "ProposalCreatedWithRequirements",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "ProposalExecuted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "eta",
+						"type": "uint256"
+					}
+				],
+				"name": "ProposalQueued",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "oldProposalThresholdBPS",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newProposalThresholdBPS",
+						"type": "uint256"
+					}
+				],
+				"name": "ProposalThresholdBPSSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "ProposalVetoed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "oldQuorumVotesBPS",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newQuorumVotesBPS",
+						"type": "uint256"
+					}
+				],
+				"name": "QuorumVotesBPSSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "support",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "votes",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "reason",
+						"type": "string"
+					}
+				],
+				"name": "VoteCast",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "oldVotingDelay",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newVotingDelay",
+						"type": "uint256"
+					}
+				],
+				"name": "VotingDelaySet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "oldVotingPeriod",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newVotingPeriod",
+						"type": "uint256"
+					}
+				],
+				"name": "VotingPeriodSet",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "implementation_",
+						"type": "address"
+					}
+				],
+				"name": "_setImplementation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "implementation",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pendingAdmin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"_setImplementation(address)": {
+					"params": {
+						"implementation_": "The address of the new implementation for delegation"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"NewAdmin(address,address)": {
+					"notice": "Emitted when pendingAdmin is accepted, which means admin is updated"
+				},
+				"NewImplementation(address,address)": {
+					"notice": "Emitted when implementation is changed"
+				},
+				"NewPendingAdmin(address,address)": {
+					"notice": "Emitted when pendingAdmin is changed"
+				},
+				"NewVetoer(address,address)": {
+					"notice": "Emitted when vetoer is changed"
+				},
+				"ProposalCanceled(uint256)": {
+					"notice": "An event emitted when a proposal has been canceled"
+				},
+				"ProposalCreated(uint256,address,address[],uint256[],string[],bytes[],uint256,uint256,string)": {
+					"notice": "An event emitted when a new proposal is created"
+				},
+				"ProposalExecuted(uint256)": {
+					"notice": "An event emitted when a proposal has been executed in the OxWorksDAOExecutor"
+				},
+				"ProposalQueued(uint256,uint256)": {
+					"notice": "An event emitted when a proposal has been queued in the OxWorksDAOExecutor"
+				},
+				"ProposalThresholdBPSSet(uint256,uint256)": {
+					"notice": "Emitted when proposal threshold basis points is set"
+				},
+				"ProposalVetoed(uint256)": {
+					"notice": "An event emitted when a proposal has been vetoed by vetoAddress"
+				},
+				"QuorumVotesBPSSet(uint256,uint256)": {
+					"notice": "Emitted when quorum votes basis points is set"
+				},
+				"VoteCast(address,uint256,uint8,uint256,string)": {
+					"notice": "An event emitted when a vote has been cast on a proposal"
+				},
+				"VotingDelaySet(uint256,uint256)": {
+					"notice": "An event emitted when the voting delay is set"
+				},
+				"VotingPeriodSet(uint256,uint256)": {
+					"notice": "An event emitted when the voting period is set"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"_setImplementation(address)": {
+					"notice": "Called by the admin to update the implementation of the delegator"
+				},
+				"admin()": {
+					"notice": "Administrator for this contract"
+				},
+				"implementation()": {
+					"notice": "Active brains of Governor"
+				},
+				"pendingAdmin()": {
+					"notice": "Pending administrator for this contract"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"OxWorksDAOProxy_flat.sol": "OxWorksDAOProxy"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"OxWorksDAOProxy_flat.sol": {
+			"keccak256": "0xe924f300cf09793ceca362185da414a6b8f493dc00a627241308ba02e40f8c08",
+			"urls": [
+				"bzz-raw://55229308103e028cfe6328856dec014ae367b819ab979d450961423fd0adb1b4",
+				"dweb:/ipfs/QmUSpXnXfNFUb2nd4HzEvRB6sHzDKzZtTRiV1FitWqNkVP"
+			]
+		}
+	},
+	"version": 1
+}

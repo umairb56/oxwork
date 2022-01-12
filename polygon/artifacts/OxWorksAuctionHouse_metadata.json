@@ -1,0 +1,687 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "workId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "extended",
+						"type": "bool"
+					}
+				],
+				"name": "AuctionBid",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "workId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					}
+				],
+				"name": "AuctionCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "workId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					}
+				],
+				"name": "AuctionExtended",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "minBidIncrementPercentage",
+						"type": "uint256"
+					}
+				],
+				"name": "AuctionMinBidIncrementPercentageUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "reservePrice",
+						"type": "uint256"
+					}
+				],
+				"name": "AuctionReservePriceUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "workId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "winner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "AuctionSettled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timeBuffer",
+						"type": "uint256"
+					}
+				],
+				"name": "AuctionTimeBufferUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Paused",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Unpaused",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "OxWorks",
+				"outputs": [
+					{
+						"internalType": "contract IOxWorksToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "auction",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "workId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "bidder",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "settled",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "workId",
+						"type": "uint256"
+					}
+				],
+				"name": "createBid",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "duration",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IOxWorksToken",
+						"name": "_OxWorks",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_weth",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timeBuffer",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_reservePrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "_minBidIncrementPercentage",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_duration",
+						"type": "uint256"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minBidIncrementPercentage",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "reservePrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "_minBidIncrementPercentage",
+						"type": "uint8"
+					}
+				],
+				"name": "setMinBidIncrementPercentage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_reservePrice",
+						"type": "uint256"
+					}
+				],
+				"name": "setReservePrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_timeBuffer",
+						"type": "uint256"
+					}
+				],
+				"name": "setTimeBuffer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "settleAuction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "settleCurrentAndCreateNewAuction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "timeBuffer",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unpause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "weth",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"createBid(uint256)": {
+					"details": "This contract only accepts payment in ETH."
+				},
+				"initialize(address,address,uint256,uint256,uint8,uint256)": {
+					"details": "This function can only be called once."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"pause()": {
+					"details": "This function can only be called by the owner when the contract is unpaused. While no new auctions can be started when paused, anyone can settle an ongoing auction."
+				},
+				"paused()": {
+					"details": "Returns true if the contract is paused, and false otherwise."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setMinBidIncrementPercentage(uint8)": {
+					"details": "Only callable by the owner."
+				},
+				"setReservePrice(uint256)": {
+					"details": "Only callable by the owner."
+				},
+				"setTimeBuffer(uint256)": {
+					"details": "Only callable by the owner."
+				},
+				"settleAuction()": {
+					"details": "This function can only be called when the contract is paused."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"unpause()": {
+					"details": "This function can only be called by the owner when the contract is paused. If required, this function will start a new auction."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"createBid(uint256)": {
+					"notice": "Create a bid for a Work, with a given amount."
+				},
+				"initialize(address,address,uint256,uint256,uint8,uint256)": {
+					"notice": "Initialize the auction house and base contracts, populate configuration values, and pause the contract."
+				},
+				"pause()": {
+					"notice": "Pause the OxWorks auction house."
+				},
+				"setMinBidIncrementPercentage(uint8)": {
+					"notice": "Set the auction minimum bid increment percentage."
+				},
+				"setReservePrice(uint256)": {
+					"notice": "Set the auction reserve price."
+				},
+				"setTimeBuffer(uint256)": {
+					"notice": "Set the auction time buffer."
+				},
+				"settleAuction()": {
+					"notice": "Settle the current auction."
+				},
+				"settleCurrentAndCreateNewAuction()": {
+					"notice": "Settle the current auction, mint a new Work, and put it up for auction."
+				},
+				"unpause()": {
+					"notice": "Unpause the OxWorks auction house."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"OxWorksAuctionHouse.sol": "OxWorksAuctionHouse"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol": {
+			"keccak256": "0x9ffedb33e192f8821cbaead72596c79ea87fb28a73f8d3a9f5004449799f8e1b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a4d3a7c2729f266c54345044baf1080fb4a85208059cacea28c95622af4371db",
+				"dweb:/ipfs/QmcHCX8reksSoQWjjYRcVoEHckz8AQ7CHKiKfzocpQq3Lg"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+			"keccak256": "0x68861bcc80cacbd498efde75aab6c74a486cc48262660d326c8d7530d9752097",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5beb2713aca05976562500789329e8c41320d00bd68ea9247856ec73894c3e3f",
+				"dweb:/ipfs/QmQKwkpofsZYAzMZs7uNL7Qq58zVBuhoZCGpD6bJdUwyqy"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol": {
+			"keccak256": "0xf93da311a3b34a8363a759c404d575746fa38351fb29ecd646c608e27219ebec",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1cfc8c4107004a7ad97a340df1b6841d0eb0aacf4ba1d58f0cfbd0de73493cb7",
+				"dweb:/ipfs/QmeBT3UzVzVEaPpisoHFFEGdUxAqNR3pmRnvn1oKseYSSv"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol": {
+			"keccak256": "0xf3a9b766b0d0456f79d9402db4b49bb16c414f3f9d65244475c0704b6c66dcf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2be836e0695ca8a93f81a4bb6a7f74469ba97fb6e33948739c7f65a5f4110e4f",
+				"dweb:/ipfs/QmTcsEpD8XJHtA5vjJ2mbrgYyDYQoMF3zuAEMTu6KFSXjX"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol": {
+			"keccak256": "0x3f0f878c796dfc7feba6d3c4e3e526c14c7deae8b7bfc71088e3f38fab0d77b3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://69bf7d357ce97852f4fb71045919b1bb2c0ad0c820e3f06b9dd4451b2dc5a343",
+				"dweb:/ipfs/QmWt96ZviufDu2qqS7Ln6UCJjfLyoFKbo6YKn54ao3o94z"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol": {
+			"keccak256": "0x0b0d548f6381370d394f7a434f994dc678b3ef3e755de106109d61343a685ea7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d8a3d42f1333d4224b7e6b7914e7ef5ee6d86586a3529bd1da15cbeece0d25b3",
+				"dweb:/ipfs/QmXmFqePuCWzBcz9KyBepE7joHMg8jSjcmd5iayyG7jm3y"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x61437cb513a887a1bbad006e7b1c8b414478427d33de47c5600af3c748f108da",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2c3d0973630ed74f2b5ce3944677a885dc70ec32fc83b35f55045a10224da32b",
+				"dweb:/ipfs/QmbefZ5RoEZKNHXCALfh683PnaNYzKPcKMFjyY1DVAgq8A"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x516a22876c1fab47f49b1bc22b4614491cd05338af8bd2e7b382da090a079990",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a439187f7126d31add4557f82d8aed6be0162007cd7182c48fd934dbab8f3849",
+				"dweb:/ipfs/QmRPLguRFvrRJS7r6F1bcLvsx6q1VrgjEpZafyeL8D7xZh"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+			]
+		},
+		"OxWorksAuctionHouse.sol": {
+			"keccak256": "0x7309630365bc42373734cdb59feae9c32118a0634a5e61ede6271809de58e10b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://78cd03e74936e8756ac942a480a0db624d557667424f577e53cd7c3a3a7ee1dc",
+				"dweb:/ipfs/QmYhtLbcAFUrfou72hPqZvoKPvHdf7YBTeWXVW8x3vq15B"
+			]
+		},
+		"https://github.com/umairb56/sample-repository/blob/main/IWETH.sol": {
+			"keccak256": "0x4e6559348826bbbba4fdd442e49efc2031d0acacbef9e0ee4a54ff10b66088d0",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://8aaab86a507ed793e670c233621566fc31a6b18c881f92abbee19e8dd847f4cc",
+				"dweb:/ipfs/QmW7oHhjhT4jDHf8zeC85vevvJCsmbkFfgWk3ZcNGwTzom"
+			]
+		},
+		"interfaces/IOxWorksAuctionHouse.sol": {
+			"keccak256": "0x64973f07f9314b76f571849afe898dba1b15aea14c1636eeaee3f19bf28367d8",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6b9fdbe3477b0e9ba18d26b1f46e8c4c573a47f02dfa5b43c502548ca240ad40",
+				"dweb:/ipfs/QmVed9TMjx2UQxjKxvegxnRQvoL7FJmL1fqd1yjh9iTFDs"
+			]
+		},
+		"interfaces/IOxWorksDescriptor.sol": {
+			"keccak256": "0x1ee4166c5d46b2d48ea820c0b5fcfcbdc9b07ce52c2b815f86d0c81c8f834340",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1ccc93277312ba57002a24c9c89ec41c9d7482e401292e149edb31408b84470a",
+				"dweb:/ipfs/QmPQEwLxkgRYMJSKw2Lv94qjXQcoymnU5TREtM1eGRdfAL"
+			]
+		},
+		"interfaces/IOxWorksSeeder.sol": {
+			"keccak256": "0xa639315619dc47b1d53cc2eaa26a0d6e052c45228c6946747df22132bbf02897",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://66785a8aa825d9cec93e33266e3e36cf5220bb9c6a7be2ed5ac54d723491572e",
+				"dweb:/ipfs/QmU2Y6BqjbLM5gFajxWK9dx1ttM7357ej2VQuCeDwqmpBA"
+			]
+		},
+		"interfaces/IOxWorksToken.sol": {
+			"keccak256": "0x2b1d487deddda354dcf6a8dba1ebd97b1aa04a0b35a4e10a90e0314001709735",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://8d5941ebfe84f2c7bb71b0f562830205321514e14be871ca882bf07bf565f27b",
+				"dweb:/ipfs/QmNVtqx24RZSzWuJ1ALeUcLtjXRV3M9Qxd8t12oJBF9G3v"
+			]
+		}
+	},
+	"version": 1
+}

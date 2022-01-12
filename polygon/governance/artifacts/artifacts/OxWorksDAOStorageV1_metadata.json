@@ -1,0 +1,329 @@
+{
+	"compiler": {
+		"version": "0.8.11+commit.d7f03943"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "OxWorks",
+				"outputs": [
+					{
+						"internalType": "contract OxWorksTokenLike",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "implementation",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "latestProposalIds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pendingAdmin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proposalCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proposalThresholdBPS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "proposals",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "proposer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "proposalThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quorumVotes",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eta",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startBlock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endBlock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "forVotes",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "againstVotes",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "abstainVotes",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "canceled",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "vetoed",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "executed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "quorumVotesBPS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "timelock",
+				"outputs": [
+					{
+						"internalType": "contract IOxWorksDAOExecutor",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vetoer",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "votingDelay",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "votingPeriod",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Storage for Governor Bravo Delegate",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"OxWorks()": {
+					"notice": "The address of the OxWorks tokens"
+				},
+				"admin()": {
+					"notice": "Administrator for this contract"
+				},
+				"implementation()": {
+					"notice": "Active brains of Governor"
+				},
+				"latestProposalIds(address)": {
+					"notice": "The latest proposal for each proposer"
+				},
+				"pendingAdmin()": {
+					"notice": "Pending administrator for this contract"
+				},
+				"proposalCount()": {
+					"notice": "The total number of proposals"
+				},
+				"proposalThresholdBPS()": {
+					"notice": "The basis point number of votes required in order for a voter to become a proposer. *DIFFERS from GovernerBravo"
+				},
+				"proposals(uint256)": {
+					"notice": "The official record of all proposals ever proposed"
+				},
+				"quorumVotesBPS()": {
+					"notice": "The basis point number of votes in support of a proposal required in order for a quorum to be reached and for a vote to succeed. *DIFFERS from GovernerBravo"
+				},
+				"timelock()": {
+					"notice": "The address of the OxWorks DAO Executor OxWorksDAOExecutor"
+				},
+				"vetoer()": {
+					"notice": "Vetoer who has the ability to veto any proposal"
+				},
+				"votingDelay()": {
+					"notice": "The delay before voting on a proposal may take place, once proposed, in blocks"
+				},
+				"votingPeriod()": {
+					"notice": "The duration of voting on a proposal, in blocks"
+				}
+			},
+			"notice": "For future upgrades, do not change OxWorksDAOStorageV1. Create a new contract which implements OxWorksDAOStorageV1 and following the naming convention OxWorksDAOStorageVX.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"governance/artifacts/OxWorksDaoExcutor.sol": "OxWorksDAOStorageV1"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"governance/artifacts/OxWorksDaoExcutor.sol": {
+			"keccak256": "0x90a1cba6da4c46a4cbd3f4e7c2723bfaec93cd4ad91b6f3479e85a3da5f91d48",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://623d963a60c2b458b0581708b2ffdcfadb1170f804879e4e61625c3de35ccacb",
+				"dweb:/ipfs/QmW5RYNeXopNv2X9fvjSoqpiW1symdUNEsxh7NKC66KpTi"
+			]
+		}
+	},
+	"version": 1
+}

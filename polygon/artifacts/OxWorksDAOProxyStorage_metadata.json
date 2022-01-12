@@ -1,0 +1,94 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "implementation",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pendingAdmin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"admin()": {
+					"notice": "Administrator for this contract"
+				},
+				"implementation()": {
+					"notice": "Active brains of Governor"
+				},
+				"pendingAdmin()": {
+					"notice": "Pending administrator for this contract"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"OxWorksDAOProxy_flat.sol": "OxWorksDAOProxyStorage"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"OxWorksDAOProxy_flat.sol": {
+			"keccak256": "0xe924f300cf09793ceca362185da414a6b8f493dc00a627241308ba02e40f8c08",
+			"urls": [
+				"bzz-raw://55229308103e028cfe6328856dec014ae367b819ab979d450961423fd0adb1b4",
+				"dweb:/ipfs/QmUSpXnXfNFUb2nd4HzEvRB6sHzDKzZtTRiV1FitWqNkVP"
+			]
+		}
+	},
+	"version": 1
+}

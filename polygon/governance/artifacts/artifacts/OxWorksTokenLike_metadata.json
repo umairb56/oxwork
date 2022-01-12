@@ -1,0 +1,83 @@
+{
+	"compiler": {
+		"version": "0.8.11+commit.d7f03943"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "getPriorVotes",
+				"outputs": [
+					{
+						"internalType": "uint96",
+						"name": "",
+						"type": "uint96"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint96",
+						"name": "",
+						"type": "uint96"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"governance/artifacts/OxWorksDaoExcutor.sol": "OxWorksTokenLike"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"governance/artifacts/OxWorksDaoExcutor.sol": {
+			"keccak256": "0x90a1cba6da4c46a4cbd3f4e7c2723bfaec93cd4ad91b6f3479e85a3da5f91d48",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://623d963a60c2b458b0581708b2ffdcfadb1170f804879e4e61625c3de35ccacb",
+				"dweb:/ipfs/QmW5RYNeXopNv2X9fvjSoqpiW1symdUNEsxh7NKC66KpTi"
+			]
+		}
+	},
+	"version": 1
+}

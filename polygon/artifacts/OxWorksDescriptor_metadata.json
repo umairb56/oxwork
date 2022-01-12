@@ -1,0 +1,945 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "baseURI",
+						"type": "string"
+					}
+				],
+				"name": "BaseURIUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "enabled",
+						"type": "bool"
+					}
+				],
+				"name": "DataURIToggled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "PartsLocked",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "accessories",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "accessoryCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_accessory",
+						"type": "bytes"
+					}
+				],
+				"name": "addAccessory",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_background",
+						"type": "string"
+					}
+				],
+				"name": "addBackground",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_body",
+						"type": "bytes"
+					}
+				],
+				"name": "addBody",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "_paletteIndex",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "_color",
+						"type": "string"
+					}
+				],
+				"name": "addColorToPalette",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_glasses",
+						"type": "bytes"
+					}
+				],
+				"name": "addGlasses",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_head",
+						"type": "bytes"
+					}
+				],
+				"name": "addHead",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "_accessories",
+						"type": "bytes[]"
+					}
+				],
+				"name": "addManyAccessories",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "_backgrounds",
+						"type": "string[]"
+					}
+				],
+				"name": "addManyBackgrounds",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "_bodies",
+						"type": "bytes[]"
+					}
+				],
+				"name": "addManyBodies",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "paletteIndex",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string[]",
+						"name": "newColors",
+						"type": "string[]"
+					}
+				],
+				"name": "addManyColorsToPalette",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "_glasses",
+						"type": "bytes[]"
+					}
+				],
+				"name": "addManyGlasses",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "_heads",
+						"type": "bytes[]"
+					}
+				],
+				"name": "addManyHeads",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "arePartsLocked",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "backgroundCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "backgrounds",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "baseURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "bodies",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "bodyCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint48",
+								"name": "background",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "body",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "accessory",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "head",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "glasses",
+								"type": "uint48"
+							}
+						],
+						"internalType": "struct IOxWorksSeeder.Seed",
+						"name": "seed",
+						"type": "tuple"
+					}
+				],
+				"name": "dataURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint48",
+								"name": "background",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "body",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "accessory",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "head",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "glasses",
+								"type": "uint48"
+							}
+						],
+						"internalType": "struct IOxWorksSeeder.Seed",
+						"name": "seed",
+						"type": "tuple"
+					}
+				],
+				"name": "generateSVGImage",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint48",
+								"name": "background",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "body",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "accessory",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "head",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "glasses",
+								"type": "uint48"
+							}
+						],
+						"internalType": "struct IOxWorksSeeder.Seed",
+						"name": "seed",
+						"type": "tuple"
+					}
+				],
+				"name": "genericDataURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "glasses",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "glassesCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "headCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "heads",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isDataURIEnabled",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lockParts",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "palettes",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_baseURI",
+						"type": "string"
+					}
+				],
+				"name": "setBaseURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "toggleDataURIEnabled",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint48",
+								"name": "background",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "body",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "accessory",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "head",
+								"type": "uint48"
+							},
+							{
+								"internalType": "uint48",
+								"name": "glasses",
+								"type": "uint48"
+							}
+						],
+						"internalType": "struct IOxWorksSeeder.Seed",
+						"name": "seed",
+						"type": "tuple"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addAccessory(bytes)": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"addBackground(string)": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"addBody(bytes)": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"addColorToPalette(uint8,string)": {
+					"details": "This function can only be called by the owner."
+				},
+				"addGlasses(bytes)": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"addHead(bytes)": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"addManyAccessories(bytes[])": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"addManyBackgrounds(string[])": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"addManyBodies(bytes[])": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"addManyColorsToPalette(uint8,string[])": {
+					"details": "This function can only be called by the owner."
+				},
+				"addManyGlasses(bytes[])": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"addManyHeads(bytes[])": {
+					"details": "This function can only be called by the owner when not locked."
+				},
+				"lockParts()": {
+					"details": "This cannot be reversed and can only be called by the owner when not locked."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setBaseURI(string)": {
+					"details": "This can only be called by the owner."
+				},
+				"toggleDataURIEnabled()": {
+					"details": "This can only be called by the owner."
+				},
+				"tokenURI(uint256,(uint48,uint48,uint48,uint48,uint48))": {
+					"details": "The returned value may be a base64 encoded data URI or an API URL."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"accessoryCount()": {
+					"notice": "Get the number of available Work `accessories`."
+				},
+				"addAccessory(bytes)": {
+					"notice": "Add a Work accessory."
+				},
+				"addBackground(string)": {
+					"notice": "Add a Work background."
+				},
+				"addBody(bytes)": {
+					"notice": "Add a Work body."
+				},
+				"addColorToPalette(uint8,string)": {
+					"notice": "Add a single color to a color palette."
+				},
+				"addGlasses(bytes)": {
+					"notice": "Add Work glasses."
+				},
+				"addHead(bytes)": {
+					"notice": "Add a Work head."
+				},
+				"addManyAccessories(bytes[])": {
+					"notice": "Batch add Work accessories."
+				},
+				"addManyBackgrounds(string[])": {
+					"notice": "Batch add Work backgrounds."
+				},
+				"addManyBodies(bytes[])": {
+					"notice": "Batch add Work bodies."
+				},
+				"addManyColorsToPalette(uint8,string[])": {
+					"notice": "Add colors to a color palette."
+				},
+				"addManyGlasses(bytes[])": {
+					"notice": "Batch add Work glasses."
+				},
+				"addManyHeads(bytes[])": {
+					"notice": "Batch add Work heads."
+				},
+				"backgroundCount()": {
+					"notice": "Get the number of available Work `backgrounds`."
+				},
+				"bodyCount()": {
+					"notice": "Get the number of available Work `bodies`."
+				},
+				"dataURI(uint256,(uint48,uint48,uint48,uint48,uint48))": {
+					"notice": "Given a token ID and seed, construct a base64 encoded data URI for an official OxWorks DAO work."
+				},
+				"generateSVGImage((uint48,uint48,uint48,uint48,uint48))": {
+					"notice": "Given a seed, construct a base64 encoded SVG image."
+				},
+				"genericDataURI(string,string,(uint48,uint48,uint48,uint48,uint48))": {
+					"notice": "Given a name, description, and seed, construct a base64 encoded data URI."
+				},
+				"glassesCount()": {
+					"notice": "Get the number of available Work `glasses`."
+				},
+				"headCount()": {
+					"notice": "Get the number of available Work `heads`."
+				},
+				"lockParts()": {
+					"notice": "Lock all Work parts."
+				},
+				"setBaseURI(string)": {
+					"notice": "Set the base URI for all token IDs. It is automatically added as a prefix to the value returned in {tokenURI}, or to the token ID if {tokenURI} is empty."
+				},
+				"toggleDataURIEnabled()": {
+					"notice": "Toggle a boolean value which determines if `tokenURI` returns a data URI or an HTTP URL."
+				},
+				"tokenURI(uint256,(uint48,uint48,uint48,uint48,uint48))": {
+					"notice": "Given a token ID and seed, construct a token URI for an official OxWorks DAO work."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"OxWorksDescriptor.sol": "OxWorksDescriptor"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"OxWorksDescriptor.sol": {
+			"keccak256": "0x020210d3af77b0f53ab09445fafd82ea96d0c2cfb6ff575c972572e627eaffd3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a01c366993a05ac4c04ca3e11357f0f1cf218ff09c965a3cf94d19330a178745",
+				"dweb:/ipfs/QmauUhM2FE61dmvwSmgQkjHZwhzDwuKrYaXVsYEULpKAn5"
+			]
+		},
+		"base64-sol/base64.sol": {
+			"keccak256": "0xa73959e6ef0b693e4423a562e612370160b934a75e618361ddd8c9c4b8ddbaaf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://17c12e16d8d66f3af15d8787920bd41ca6c1e7517a212a6b9cebd4b6d38f36fe",
+				"dweb:/ipfs/QmcXMnZUXEz6LRKsm3CSvqdPboAzmezavi8bTg2dRxM2yE"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
+			"keccak256": "0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e12cbaa7378fd9b62280e4e1d164bedcb4399ce238f5f98fc0eefb7e50577981",
+				"dweb:/ipfs/QmXRoFGUgfsaRkoPT5bxNMtSayKTQ8GZATLPXf69HcRA51"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Strings.sol": {
+			"keccak256": "0x32c202bd28995dd20c4347b7c6467a6d3241c74c8ad3edcbb610cd9205916c45",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8179c356adb19e70d6b31a1eedc8c5c7f0c00e669e2540f4099e3844c6074d30",
+				"dweb:/ipfs/QmWFbivarEobbqhS1go64ootVuHfVohBseerYy9FTEd1W2"
+			]
+		},
+		"interfaces/IOxWorksDescriptor.sol": {
+			"keccak256": "0x1ee4166c5d46b2d48ea820c0b5fcfcbdc9b07ce52c2b815f86d0c81c8f834340",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1ccc93277312ba57002a24c9c89ec41c9d7482e401292e149edb31408b84470a",
+				"dweb:/ipfs/QmPQEwLxkgRYMJSKw2Lv94qjXQcoymnU5TREtM1eGRdfAL"
+			]
+		},
+		"interfaces/IOxWorksSeeder.sol": {
+			"keccak256": "0xa639315619dc47b1d53cc2eaa26a0d6e052c45228c6946747df22132bbf02897",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://66785a8aa825d9cec93e33266e3e36cf5220bb9c6a7be2ed5ac54d723491572e",
+				"dweb:/ipfs/QmU2Y6BqjbLM5gFajxWK9dx1ttM7357ej2VQuCeDwqmpBA"
+			]
+		},
+		"libs/MultiPartRLEToSVG.sol": {
+			"keccak256": "0xa806c1696e76ea653670e590112877bc90a552d1d7d14a7647d9251fad63e048",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e5a206d85d1564a4786d13bac5b4d41925db864360d9327754b191e35554b0d4",
+				"dweb:/ipfs/QmSJVJz1RgKFYtkMCxpMeDE1QSKduSv5s5uorAnUCWvd33"
+			]
+		},
+		"libs/NFTDescriptor.sol": {
+			"keccak256": "0x8c0032e9fe9b0daac099b830785d3ab69db1d683d223f3806ae88553581f58f3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://51448e4c80f9e7012322c1b92155b856320ea2ad9583a06808fe3b95f417e930",
+				"dweb:/ipfs/QmYU5brxuz9tHm4gUvsxojEd7h5s3TSuUhiK5mvGHQyxnq"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Libs/MultiPartRLEToSVG.sol": "MultiPartRLEToSVG"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Libs/MultiPartRLEToSVG.sol": {
+			"keccak256": "0xa806c1696e76ea653670e590112877bc90a552d1d7d14a7647d9251fad63e048",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e5a206d85d1564a4786d13bac5b4d41925db864360d9327754b191e35554b0d4",
+				"dweb:/ipfs/QmSJVJz1RgKFYtkMCxpMeDE1QSKduSv5s5uorAnUCWvd33"
+			]
+		}
+	},
+	"version": 1
+}

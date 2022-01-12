@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "proxies",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"external/opensea/IProxyRegistry.sol": "IProxyRegistry"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"external/opensea/IProxyRegistry.sol": {
+			"keccak256": "0x562e119b1ceddfe91d35c5414012fb7207b0d80b709f2cfc76a3533f48817c8b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6b3270faf453497d61a8f7c101c07fe219cb1d704aba9a913070bbe6878cd90e",
+				"dweb:/ipfs/QmUv2VXJp81K1gWBexKFqZ4kqet3sEeub5NFGUBEESn3s1"
+			]
+		}
+	},
+	"version": 1
+}

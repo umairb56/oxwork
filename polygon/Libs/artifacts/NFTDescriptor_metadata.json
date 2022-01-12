@@ -1,0 +1,68 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructTokenURI(NFTDescriptor.TokenURIParams,mapping(uint8 => string[]) storage)": {
+					"notice": "Construct an ERC721 token URI."
+				},
+				"generateSVGImage(MultiPartRLEToSVG.SVGParams,mapping(uint8 => string[]) storage)": {
+					"notice": "Generate an SVG image for use in the ERC721 token URI."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Libs/NFTDescriptor.sol": "NFTDescriptor"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Libs/MultiPartRLEToSVG.sol": {
+			"keccak256": "0xa806c1696e76ea653670e590112877bc90a552d1d7d14a7647d9251fad63e048",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e5a206d85d1564a4786d13bac5b4d41925db864360d9327754b191e35554b0d4",
+				"dweb:/ipfs/QmSJVJz1RgKFYtkMCxpMeDE1QSKduSv5s5uorAnUCWvd33"
+			]
+		},
+		"Libs/NFTDescriptor.sol": {
+			"keccak256": "0x8c0032e9fe9b0daac099b830785d3ab69db1d683d223f3806ae88553581f58f3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://51448e4c80f9e7012322c1b92155b856320ea2ad9583a06808fe3b95f417e930",
+				"dweb:/ipfs/QmYU5brxuz9tHm4gUvsxojEd7h5s3TSuUhiK5mvGHQyxnq"
+			]
+		},
+		"base64-sol/base64.sol": {
+			"keccak256": "0xa73959e6ef0b693e4423a562e612370160b934a75e618361ddd8c9c4b8ddbaaf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://17c12e16d8d66f3af15d8787920bd41ca6c1e7517a212a6b9cebd4b6d38f36fe",
+				"dweb:/ipfs/QmcXMnZUXEz6LRKsm3CSvqdPboAzmezavi8bTg2dRxM2yE"
+			]
+		}
+	},
+	"version": 1
+}

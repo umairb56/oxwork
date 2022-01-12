@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.11+commit.d7f03943"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"OxWorksAuctionHouse_flat.sol": "MultiPartRLEToSVG"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"OxWorksAuctionHouse_flat.sol": {
+			"keccak256": "0x82ee3113465d23ced960a0814c930307d9c328c45981295d67ec1b31ba63322f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b8694e841de84a1d7349ba8659d6f52a8560cd2e5af692464dc7a2c1d6bf10db",
+				"dweb:/ipfs/QmfXkkvoUUXNoSkkE96ZeUDR7NnfxLyNFDsyRNjESGLD1f"
+			]
+		}
+	},
+	"version": 1
+}
